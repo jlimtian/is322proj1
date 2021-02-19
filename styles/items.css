@@ -1,0 +1,14 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2%;
+}
+
+.column {
+    width: 30%;
+    margin: 2em auto auto;
+}
+
+.card {
+    border: 1px solid darkgray;
+}
