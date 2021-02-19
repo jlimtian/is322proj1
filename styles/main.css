@@ -2,54 +2,41 @@ body {
     background-color: aliceblue;
 }
 
+.header {
+    background-color: cadetblue;
+}
+
 p {
     font-size: 14px;
     color: green;
 }
 
-p.text-small {
-    font-size: 10px;
-    color: blue;
-    font-weight: 700;
+.footer .inner {
+    border-top: 1px solid #dbdbdb;
+    padding-top: 3em;
 }
 
-p.text-big {
-    font-size: 18px;
-    color: red;
-    text-decoration: underline;
+
+footer {
+    background: #20c997;
+    clear: both;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
-#square-container {
-    margin: 10px 15px;
-    padding: 5px;
+
+.flex-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
 }
 
-#square-container.wrap {
-    flex-wrap: wrap;
-}
-
-.square {
-    flex: 1 1 150px;
-    height: 150px;
-    background-color: #FF0000;
-    margin: 10px;
-}
-
-#square-container.wrap .square {
-    flex: 0 0 150px;
-}
-
-.square:last-of-type {
-    margin-right: 0;
-}
-
-.green {
-    background-color: #00FF00;
-}
-
-.blue {
-    background-color: #0000FF;
+.flex-container > span {
+    background-color: #f1f1f1;
+    width: 100%;
+    height: 25px;
+    text-align: center;
+    font-size: 100%;
 }
