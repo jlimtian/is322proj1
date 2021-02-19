@@ -24,7 +24,7 @@ ul > li {
     padding-top: 0.4%;
 }
 .first {
-    width: 18%;
+    width: 13em;
     padding-top: 0;
 }
 
@@ -61,7 +61,6 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
 
 .flex-container {
     display: flex;
