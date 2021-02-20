@@ -29,7 +29,7 @@
             <!-- idk if we gonna put the product pages here but yolo -->
             <li class="first"><h2>Lucerna Exotica</h2></li>
             <li style="cursor: pointer"><a href="../index.html">Home</a></li>
-            <li><a href="../pages/items.html">Products</a></li>
+            <li><a href="../pages/productList.html">Products</a></li>
         </ul>
     </div>
 </header>
@@ -39,6 +39,28 @@
         <!-- maybe a section tab here idk -->
         <!-- all the cards need images, names & prices, and links to their product page-->
         <h1>Lamps For Sale</h1>
+        <div class="filters">
+
+            <div class="form-group">
+                <label for="orderBy">Order By</label>
+                <select id="orderBy" name="orderBy">
+                    <option value="name">Name</option>
+                    <option value="price">Price</option>
+                    <option value="popularity">Popularity?</option>
+                </select>
+            </div>
+
+            <form>
+                <input type="checkbox" id="pRange" name="pRange" value="priceR">
+                <label for="pRange"> Price Range</label><br>
+                <input type="checkbox" id="isAnimal" name="isAnimal" value="Animal">
+                <label for="isAnimal"> Include Animal Shaped?</label><br>
+                <input type="checkbox" id="extra" name="extra" value="Extra">
+                <label for="extra"> Up to Juline</label>
+            </form>
+
+        </div>
+
         <div class="row">
             <div class='column'>
                 <div class="card">
