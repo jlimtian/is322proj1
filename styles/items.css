@@ -5,10 +5,18 @@
 }
 
 .column {
-    width: 30%;
+    width: 99%;
     margin: 2em auto auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .card {
+    width: 30%;
+    margin: 2em auto auto;
     border: 1px solid darkgray;
+}
+
+img {
+    width: 100%
 }
