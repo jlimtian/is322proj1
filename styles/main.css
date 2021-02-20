@@ -4,46 +4,64 @@
 }
 
 html {
-    background-color: cadetblue;
+    background-color: #000033;
+    font-family: Verdana, sans-serif;
 }
 
 #nav_menu {
-    background-color: antiquewhite;
+    background-color: rebeccapurple;
+    color: white;
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
     margin: 0;
-    padding: 1%;
 }
 
 ul > li {
-    width: 5%;
+    width: 5em;
     height: 1.5em;
-    text-align: left;
-    font-size: 99%;
-    padding-top: 0.4%;
+    text-align: center;
+    font-size: small;
+    border: none;
 }
 
 .first {
-    width: 13em;
-    padding-top: 0;
+    width: 15em;
+    padding: 1% 0 2%;
+}
+
+.nav-link {
+    padding: 1.5% 0;
 }
 
 a:link {
     text-decoration: none;
     text-align: left;
-    color: cadetblue;
+    color: aliceblue;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: mediumpurple;
 }
 
 body {
     width: 90%;
     margin: 1% 5%;
     text-align: center;
-    background-color: aliceblue;
+    background-color: white;
 }
 
 .active {
     display: none;
+    border-radius: 10px;
+    border: 1px hidden white;
+    overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.text {
+    margin: auto;
 }
 
 img {
@@ -53,6 +71,24 @@ img {
 body main #slide-holder {
     margin: 0.5% auto auto;
     padding: 1%;
+
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
 }
 
 .index-header {
@@ -62,37 +98,51 @@ body main #slide-holder {
 h3 {
     margin: 1% 5%;
     text-align: left;
+    font-weight: normal;
+    font-size: large;
 }
 
 p {
     font-size: 2em;
     color: white;
-    background-color: darkslategrey;
+    background-color: #000066;
     text-align: left;
     margin: auto 0.5%;
-    padding: 1%
+    padding: 1%;
 }
 
 footer {
-    background: #20c997;
+    background: rebeccapurple;
+    color: aliceblue;
     clear: both;
     position: static;
     left: 0;
     bottom: 0;
     width: 100%;
     margin-top: 2%;
+    font-size: small;
 }
 
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-    background-color: #f1f1f1;
-    padding-top: 0.5%;
+    padding-top: 1%;
 }
 
 .flex-container > span {
     width: 100%;
     height: 25px;
     text-align: center;
-    font-size: 100%;
+}
+
+.flex-container .text-muted a {
+    text-decoration: underline;
+}
+
+.text-muted a:link {
+    color: aliceblue;
+}
+
+.text-muted a:hover {
+    color: mistyrose;
 }

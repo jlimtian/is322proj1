@@ -11,7 +11,7 @@ var carded = 'carded';
         {image:'../images/arrow_lamp.jpg', name:'Arrow Lamp', _price:'$17.95', _popularity:'005'},
         {image:'../images/balloon_lamp.jpg', name:'Balloon Lamp', _price:'$28.95', _popularity:'004'},
         {image:'../images/birds_lamp.jpg', name:'Bird Lamp', _price:'$65.95', _popularity:'002'},
-        {image:'../images/deluxe_jellyfish_lamp.jpg', name:'Jellyfish Lamp', _price:'$1200.95', _popularity:'001'},
+        {image:'../images/deluxe_jellyfish_lamp.jpg', name:'Jellyfish Lamp', _price:'$1,200.95', _popularity:'001'},
         {image:'../images/ducky_lamp.jpg', name:'Ducky Lamp', _price:'$456.95', _popularity:'003'},
         {image:'../images/horse_lamp.jpg', name:'Horse Lamp', _price:'$2.95', _popularity:'006'}
     ];
@@ -22,9 +22,9 @@ var carded = 'carded';
         cardBody.innerHTML = '';
 
         // Maps all attributes to a card
-        var tableRows = results.map(function (result, index) {
-            return '<div class="card"><div><img src="' + result.image + '"></div><div>' + result.name + '</div><div>' +
-                result._price + '</div><div>' + result._popularity + '</div></div>';
+        var tableRows = results.map(function (result) {
+            return '<div class="card"><div><img src="' + result.image + '"></div><div class="card-label"><div class="card-name">' + result.name + '</div><div class="card-price">' +
+                result._price + '</div></div></div>';
         });
 
         // Set the contents of the table body to the new set of rendered HTML rows

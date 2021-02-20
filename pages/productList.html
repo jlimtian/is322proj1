@@ -40,23 +40,29 @@
         <!-- all the cards need images, names & prices, and links to their product page-->
         <h1>Lamps For Sale</h1>
         <div class="filters">
-
-            <div class="form-group">
-                <label for="orderBy">Order By</label>
-                <select id="orderBy" name="orderBy">
-                    <option value="name">Name</option>
-                    <option value="price">Price</option>
-                    <option value="popularity">Popularity?</option>
-                </select>
-            </div>
-
             <form>
-                <input type="checkbox" id="pRange" name="pRange" value="priceR">
-                <label for="pRange"> Price Range</label><br>
-                <input type="checkbox" id="isAnimal" name="isAnimal" value="Animal">
-                <label for="isAnimal"> Include Animal Shaped?</label><br>
-                <input type="checkbox" id="extra" name="extra" value="Extra">
-                <label for="extra"> Up to Juline</label>
+                <div class="order-by">
+                    <label for="orderBy">Order By</label>
+                    <select id="orderBy" name="orderBy">
+                        <option value="name">Name</option>
+                        <option value="price">Price</option>
+                        <option value="popularity">Popularity?</option>
+                    </select>
+                </div>
+
+
+                <div class="price">
+                    <input type="checkbox" id="pRange" name="pRange" value="priceR">
+                    <label for="pRange"> Price Range</label>
+                </div>
+                <div class="animal">
+                    <input type="checkbox" id="isAnimal" name="isAnimal" value="Animal">
+                    <label for="isAnimal"> Include Animal Shaped?</label>
+                </div>
+                <div class="extra">
+                    <input type="checkbox" id="extra" name="extra" value="Extra">
+                    <label for="extra"> Up to Juline</label>
+                </div>
             </form>
 
         </div>

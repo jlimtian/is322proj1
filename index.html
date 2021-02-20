@@ -24,8 +24,8 @@
             <ul id="nav_menu">
                     <!-- idk if we gonna put the product pages here but yolo -->
                 <li class="first"><h2>Lucerna Exotica</h2></li>
-                    <li style="cursor: pointer"><a href="index.html">Home</a></li>
-                    <li><a href="pages/productList.html">Products</a></li>
+                    <li class="nav-link" style="cursor: pointer"><a href="index.html">Home</a></li>
+                    <li class="nav-link"><a href="pages/productList.html">Products</a></li>
                 </ul>
         </div>
     </header>
@@ -35,18 +35,24 @@
         <!-- need to include alt text later -->
         <div class="slide-container" id="slide-holder">
             <div class="active fade">
-                <img src="images/ducky_lamp.jpg" style="width: 99%; height: 45em;">
-                <p class="text">Duck Lamp</p>
+                <a href="pages/productList.html">
+                    <img src="images/ducky_lamp.jpg" alt="Ducky Lamp." style="width: 100%; height: 45em;">
+                    <p class="text">Duck Lamp</p>
+                </a>
             </div>
 
             <div class="active fade">
-                <img src="images/birds_lamp.jpg" style="width: 99%; height: 45em;">
-                <p class="text">Landing Birds Lamp</p>
+                <a href="pages/productList.html">
+                    <img src="images/birds_lamp.jpg" alt="Birds on a perch lamp." style="width: 100%; height: 45em;">
+                    <p class="text">Landing Birds Lamp</p>
+                </a>
             </div>
 
             <div class="active fade">
-                <img src="images/deluxe_jellyfish_lamp.jpg" style="width: 99%; height: 45em;">
-                <p class="text">Jellyfish Lamp</p>
+                <a href="pages/productList.html">
+                    <img src="images/deluxe_jellyfish_lamp.jpg" alt="Deluxe Jellyfish Lamp." style="width: 100%; height: 45em;">
+                    <p class="text">Jellyfish Lamp</p>
+                </a>
             </div>
         </div>
 
@@ -66,8 +72,8 @@
     <footer>
         <div class="footer flex-container" id="myFooter">
             <span class="text-muted">&copy; Jhanelle Gray, Juline Limtian, 2021 </span>
-            <span class="text-muted"> Terms Of Use </span>
-            <span class="text-muted"> Privacy Statement</span>
+            <span class="text-muted"><a href="#">Terms Of Use</a></span>
+            <span class="text-muted"><a href="#">Privacy Statement</a></span>
         </div>
     </footer>
 
