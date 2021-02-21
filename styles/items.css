@@ -138,6 +138,11 @@ img {
     div select {
         width: 60%;
     }
+
+    .card {
+        min-width: 380px;
+        max-width: 420px;
+    }
 }
 
 @media only screen and (max-width: 499px) {

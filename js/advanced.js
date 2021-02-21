@@ -8,12 +8,12 @@ var carded = 'carded';
     console.log(window.carded);
 
     var mockDatabase = [
-        {image:'../images/arrow_lamp.jpg', alt:'Lamp made of Arrows.', name:'Arrow Lamp', _price:'$17.95', _popularity:'005', animal: false, item: true},
-        {image:'../images/balloon_lamp.jpg', alt:'Red Balloon Lamp.', name:'Balloon Lamp', _price:'$28.95', _popularity:'004', animal: false, item: true},
-        {image:'../images/birds_lamp.jpg', alt:'Perched Birds Lamp.', name:'Bird Lamp', _price:'$65.95', _popularity:'002', animal: true, item: false},
+        {image:'../images/ducky_lamp.jpg', alt:'Cute Duck Lamp.', name:'Ducky Lamp', _price:'$456.95', _popularity:'002', animal: true, item: false},
+        {image:'../images/balloon_lamp.jpg', alt:'Red Balloon Lamp.', name:'Balloon Lamp', _price:'$28.95', _popularity:'003', animal: false, item: true},
         {image:'../images/deluxe_jellyfish_lamp.jpg', alt:'Deluxe Jellyfish Lamp.', name:'Jellyfish Lamp', _price:'$1,200.95', _popularity:'001', animal: true, item: false},
-        {image:'../images/ducky_lamp.jpg', alt:'Cute Duck Lamp.', name:'Ducky Lamp', _price:'$456.95', _popularity:'003', animal: true, item: false},
-        {image:'../images/horse_lamp.jpg', alt:'Black Horse Lamp.', name:'Horse Lamp', _price:'$2.95', _popularity:'006', animal: true, item: false}
+        {image:'../images/pencil_lamp.jpg', alt:'Large Pencil with Squiggle Lamp.', name:'Pencil Lamp', _price:'$52.95', _popularity:'003', animal: false, item: true},
+        {image:'../images/arrow_lamp.jpg', alt:'Lamp made of Arrows.', name:'Arrow Lamp', _price:'$16.95', _popularity:'005', animal: false, item: true},
+        {image:'../images/birds_lamp.jpg', alt:'Perched Birds Lamp.', name:'Bird Lamp', _price:'$65.95', _popularity:'002', animal: true, item: false}
     ];
 
     function renderList (results) {

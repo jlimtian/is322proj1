@@ -135,13 +135,13 @@ footer {
 .flex-container {
     display: flex;
     flex-wrap: nowrap;
-    padding-top: 1%;
+    padding: 1% 0;
 }
 
 .flex-container > span {
     width: 100%;
-    height: 25px;
     text-align: center;
+    margin: auto;
 }
 
 .flex-container .text-muted a {
@@ -158,12 +158,16 @@ footer {
 
 /* Media queries for mobile */
 
-@media only screen and (min-width: 750px) and (max-width: 810px) {
+@media only screen and (max-width: 810px) {
     .flex-container {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         padding-top: 2%;
+    }
+
+    .flex-container > span {
+        padding-bottom: 2%;
     }
 }
 
@@ -219,12 +223,6 @@ footer {
 
     h3 {
         margin-top: 3%;
-    }
-
-    .flex-container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        padding-top: 2%;
+        font-size: medium;
     }
 }
