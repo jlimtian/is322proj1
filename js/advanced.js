@@ -62,7 +62,7 @@ var carded = 'carded';
         }
     ];
 
-    // Th renderer
+    // The renderer
     function renderList(results) {
         // Grab the div to place the cards, clear it out in case it was already populated
         var cardBody = document.querySelector('#container');
@@ -99,6 +99,7 @@ var carded = 'carded';
                     return 1;
                 }
             }) :
+            // Sort anything with numbers
             mockDatabase.sort(function (a, b) {
                 return a[sortValue] - b[sortValue];
             });
