@@ -8,6 +8,8 @@ html {
     font-family: Verdana, sans-serif;
 }
 
+/* Navigation */
+
 #nav_menu {
     background-color: rebeccapurple;
     color: white;
@@ -45,12 +47,16 @@ a:link, a:visited {
     background-color: mediumpurple;
 }
 
+/* Background */
+
 body {
     width: 90%;
     margin: 1% 5%;
     text-align: center;
     background-color: white;
 }
+
+/* Carousel */
 
 .active {
     display: none;
@@ -91,6 +97,8 @@ body main #slide-holder {
     to {opacity: 1}
 }
 
+/* Content */
+
 .index-header {
     margin: 2% auto;
 }
@@ -110,6 +118,8 @@ p {
     margin: auto 0.5%;
     padding: 1%;
 }
+
+/* Footer */
 
 footer {
     background: rebeccapurple;
@@ -145,4 +155,73 @@ footer {
 
 .text-muted a:hover, .text-muted a:focus {
     color: mistyrose;
+}
+
+/* Media queries for mobile */
+
+@media only screen and (min-width: 750px) and (max-width: 810px) {
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-top: 2%;
+    }
+}
+
+@media only screen and (max-width: 749px) {
+
+    ul > li {
+        width: 4.7em;
+    }
+
+    .first {
+        padding: 0 0 2%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #slide-holder {
+        margin-bottom: 5px;
+    }
+
+    .active {
+        margin: auto;
+        width: calc(100% - 20px);
+        height: 25em;
+        background-color: #000066;
+    }
+
+    img {
+        max-height: 23.2em;
+        object-fit: fill;
+    }
+
+    .active p {
+        max-height: 5em;
+        font-size: large;
+        object-fit: fill;
+    }
+
+    .about {
+        margin-top: 1%;
+    }
+
+    h3 {
+        margin-top: 3%;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-top: 2%;
+    }
 }
