@@ -34,13 +34,13 @@ ul > li {
     padding: 1.5% 0;
 }
 
-a:link {
+a:link, a:visited {
     text-decoration: none;
     text-align: left;
     color: aliceblue;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link:focus, .nav-link:active {
     color: white;
     background-color: mediumpurple;
 }
@@ -139,10 +139,10 @@ footer {
     text-decoration: underline;
 }
 
-.text-muted a:link {
+.text-muted a:link, .text-muted a:visited {
     color: aliceblue;
 }
 
-.text-muted a:hover {
+.text-muted a:hover, .text-muted a:focus {
     color: mistyrose;
 }

@@ -8,12 +8,12 @@ var carded = 'carded';
     console.log(window.carded);
 
     var mockDatabase = [
-        {image:'../images/arrow_lamp.jpg', name:'Arrow Lamp', _price:'$17.95', _popularity:'005'},
-        {image:'../images/balloon_lamp.jpg', name:'Balloon Lamp', _price:'$28.95', _popularity:'004'},
-        {image:'../images/birds_lamp.jpg', name:'Bird Lamp', _price:'$65.95', _popularity:'002'},
-        {image:'../images/deluxe_jellyfish_lamp.jpg', name:'Jellyfish Lamp', _price:'$1,200.95', _popularity:'001'},
-        {image:'../images/ducky_lamp.jpg', name:'Ducky Lamp', _price:'$456.95', _popularity:'003'},
-        {image:'../images/horse_lamp.jpg', name:'Horse Lamp', _price:'$2.95', _popularity:'006'}
+        {image:'../images/arrow_lamp.jpg', alt:'Lamp made of Arrows.', name:'Arrow Lamp', _price:'$17.95', _popularity:'005'},
+        {image:'../images/balloon_lamp.jpg', alt:'Red Balloon Lamp.', name:'Balloon Lamp', _price:'$28.95', _popularity:'004'},
+        {image:'../images/birds_lamp.jpg', alt:'Perched Birds Lamp.', name:'Bird Lamp', _price:'$65.95', _popularity:'002'},
+        {image:'../images/deluxe_jellyfish_lamp.jpg', alt:'Deluxe Jellyfish Lamp.', name:'Jellyfish Lamp', _price:'$1,200.95', _popularity:'001'},
+        {image:'../images/ducky_lamp.jpg', alt:'Cute Duck Lamp.', name:'Ducky Lamp', _price:'$456.95', _popularity:'003'},
+        {image:'../images/horse_lamp.jpg', alt:'Black Horse Lamp.', name:'Horse Lamp', _price:'$2.95', _popularity:'006'}
     ];
 
     function renderList (results) {
@@ -23,8 +23,8 @@ var carded = 'carded';
 
         // Maps all attributes to a card
         var tableRows = results.map(function (result) {
-            return '<div class="card"><div><img src="' + result.image + '"></div><div class="card-label"><div class="card-name">' + result.name + '</div><div class="card-price">' +
-                result._price + '</div></div></div>';
+            return '<div class="card"><a href="#"><div><img src="' + result.image + '" alt="' + result.alt + '"></div><div class="card-label"><div class="card-name">' + result.name + '</div><div class="card-price">' +
+                result._price + '</div></div></a></div>';
         });
 
         // Set the contents of the table body to the new set of rendered HTML rows
