@@ -118,7 +118,7 @@ img {
 @media only screen and (min-width: 750px) and (max-width: 9000px) {
 
     .card {
-        min-width: 380px;
+        min-width: 330px;
         max-width: 420px;
     }
 }
@@ -140,7 +140,7 @@ img {
     }
 
     .card {
-        min-width: 380px;
+        min-width: 330px;
         max-width: 420px;
     }
 }
@@ -148,17 +148,18 @@ img {
 @media only screen and (max-width: 499px) {
 
     form {
-        flex-wrap: wrap;
-        font-size: small;
+        flex-direction: column;
+        font-size: medium;
+        margin: auto;
     }
 
     form > div {
-        width: 50%;
+        width: 100%;
         padding-bottom: 1em;
     }
 
     div select {
-        width: 60%;
+        width: 100%;
     }
 
     .row {

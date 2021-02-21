@@ -108,27 +108,6 @@ var carded = 'carded';
         orderBy(event.target.value);
     });
 
-    function priceRange(showItems) {
-        var filterResults = mockDatabase.filter(function (result) {
-            if (showItems < 100) {
-                return showItems;
-            }
-            if (showItems >= 100 && showItems <= 500) {
-                return showItems;
-            }
-            if (showItems >= 500) {
-                return showItems;
-            }
-        });
-        renderList(filterResults);
-    }
-
-    document.querySelector('#pRange').addEventListener('change', function (event) {
-        var value = event.target.value === 'price';
-
-        priceRange(value);
-    });
-
     // can we make animals and items different drop downs like in the published example
     function toggleAnimals(showAnimals) {
         var filteredResults = mockDatabase.filter(function (result) {
