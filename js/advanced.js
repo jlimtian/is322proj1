@@ -62,29 +62,30 @@ var carded = 'carded';
         }
     ];
 
+    // Th renderer
     function renderList(results) {
         // Grab the div to place the cards, clear it out in case it was already populated
         var cardBody = document.querySelector('#container');
         cardBody.innerHTML = '';
 
         // Maps all attributes to a card
-        var tableRows = results.map(function (result) {
+        var cardSet = results.map(function (result) {
             return '<div class="card"><a href="#"><div><img src="' + result.image + '" alt="' + result.alt + '"></div><div class="card-label"><div class="card-name">' + result.name + '</div><div class="card-price">$' +
                 result.price + '</div></div></a></div>';
         });
 
-        // Set the contents of the table body to the new set of rendered HTML rows
-        tableRows.forEach(function (card) {
-            cardBody.innerHTML += card; // += adds to HTML instead of overwriting it entirely.
+        cardSet.forEach(function (card) {
+            cardBody.innerHTML += card;
         });
 
-        // Lower level scope once again overwrites what's above it.
         var carded = 'renderList';
         console.log(carded);
     }
 
     renderList(mockDatabase);
 
+
+    // The sort function
     function orderBy(sortValue) {
         var sortedResults = (sortValue === 'name') ?
             mockDatabase.sort(function (a, b) {
@@ -108,29 +109,26 @@ var carded = 'carded';
         orderBy(event.target.value);
     });
 
-    // can we make animals and items different drop downs like in the published example
+    // Filters animal products from item products
     function toggleAnimals(showAnimals) {
-        var filteredResults = mockDatabase.filter(function (result) {
-            return showAnimals || result.animal;
-        });
+        var filteredResults;
+         if (showAnimals === true) {
+             filteredResults = mockDatabase.filter(function (result) {
+                 return result.animal;
+             });
+         }
+         else {
+             filteredResults = mockDatabase.filter(function (result) {
+                 return result.item;
+             });
+         }
+
         renderList(filteredResults);
     }
 
-    document.querySelector('#category').addEventListener('change', function (event) {
-        var value = event.target.value === 'item';
-
-    toggleAnimals(value);
+    document.querySelector('#category').addEventListener('change', function(event){
+        var value = event.target.value === 'isAnimal';
+        toggleAnimals(value);
     });
-
-    /*function toggleItems(showItems) {
-        var filteredResults = mockDatabase.filter(function (result) {
-            return showItems || result.item;
-        });
-        renderList(filteredResults);
-    }
-    document.querySelector('#category').addEventListener('change', function (event){
-        var value = event.target.value === 'animal';
-        toggleItems(value);
-    }); */
 
 })();
