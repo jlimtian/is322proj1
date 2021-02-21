@@ -62,30 +62,29 @@ var carded = 'carded';
         }
     ];
 
-    // The renderer
     function renderList(results) {
         // Grab the div to place the cards, clear it out in case it was already populated
         var cardBody = document.querySelector('#container');
         cardBody.innerHTML = '';
 
         // Maps all attributes to a card
-        var cardSet = results.map(function (result) {
+        var tableRows = results.map(function (result) {
             return '<div class="card"><a href="#"><div><img src="' + result.image + '" alt="' + result.alt + '"></div><div class="card-label"><div class="card-name">' + result.name + '</div><div class="card-price">$' +
                 result.price + '</div></div></a></div>';
         });
 
-        cardSet.forEach(function (card) {
-            cardBody.innerHTML += card;
+        // Set the contents of the table body to the new set of rendered HTML rows
+        tableRows.forEach(function (card) {
+            cardBody.innerHTML += card; // += adds to HTML instead of overwriting it entirely.
         });
 
+        // Lower level scope once again overwrites what's above it.
         var carded = 'renderList';
         console.log(carded);
     }
 
     renderList(mockDatabase);
 
-
-    // The sort function
     function orderBy(sortValue) {
         var sortedResults = (sortValue === 'name') ?
             mockDatabase.sort(function (a, b) {
@@ -99,7 +98,6 @@ var carded = 'carded';
                     return 1;
                 }
             }) :
-            // Sort anything with numbers
             mockDatabase.sort(function (a, b) {
                 return a[sortValue] - b[sortValue];
             });
@@ -110,24 +108,47 @@ var carded = 'carded';
         orderBy(event.target.value);
     });
 
-    // Filters animal products from item products
+    function priceRange(showItems) {
+            var filterResults;
+            if (showItems < 100) {
+                filterResults = mockDatabase.filter(function (result) {
+                    return showItems;
+                });
+            }
+            if (showItems >= 100 && showItems <= 500) {
+                filterResults = mockDatabase.filter(function (result) {
+                    return showItems;
+                });
+            }
+            if (showItems >= 500) {
+                filterResults = mockDatabase.filter(function (result) {
+                    return showItems;
+                });
+            }
+            renderList(filterResults);
+    }
+    document.querySelector('#pRange').addEventListener('change', function (event) {
+        var value = event.target.value === 'r1';
+        priceRange(value);
+    });
+
+    // can we make animals and items different drop downs like in the published example
     function toggleAnimals(showAnimals) {
         var filteredResults;
-         if (showAnimals === true) {
-             filteredResults = mockDatabase.filter(function (result) {
-                 return result.animal;
-             });
-         }
-         else {
-             filteredResults = mockDatabase.filter(function (result) {
-                 return result.item;
-             });
-         }
+        if (showAnimals === true) {
+            filteredResults = mockDatabase.filter(function (result) {
+                return result.animal;
+            });
+        }
+        else {
+            filteredResults = mockDatabase.filter(function (result) {
+                return result.item;
+            });
+        }
 
         renderList(filteredResults);
     }
-
-    document.querySelector('#category').addEventListener('change', function(event){
+    document.querySelector('#category').addEventListener('change', function(event) {
         var value = event.target.value === 'isAnimal';
         toggleAnimals(value);
     });
