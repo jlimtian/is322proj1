@@ -142,22 +142,31 @@ var carded = 'carded';
     // can we make animals and items different drop downs like in the published example
     function toggleAnimals(showAnimals) {
         var filteredResults;
-        if (showAnimals === true) {
+        if (showAnimals === 0) {
             filteredResults = mockDatabase.filter(function (result) {
-                return result.animal;
+                return result.item !== true;
+            });
+        }
+        else if (showAnimals === 1){
+            filteredResults = mockDatabase.filter(function (result) {
+                return result.item === true;
             });
         }
         else {
-            filteredResults = mockDatabase.filter(function (result) {
-                return result.item;
-            });
+            return false;
         }
-
         renderList(filteredResults);
     }
-    document.querySelector('#category').addEventListener('change', function(event) {
-        var value = event.target.value === 'isAnimal';
+
+    document.querySelector('#category').addEventListener('change', function(event){
+        var value = '';
+
+        if(event.target.value === 'isAnimal') {
+            value = 0;
+        }
+        else if (event.target.value === 'item') {
+            value = 1;
+        }
         toggleAnimals(value);
     });
-
 })();

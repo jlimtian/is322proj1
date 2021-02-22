@@ -71,7 +71,7 @@ img {
 
 .card-label {
     display: flex;
-    font-size: medium;
+    font-size: 0.9em;
     color: white;
     background-color: #000066;
     margin: auto;
