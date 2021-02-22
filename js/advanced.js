@@ -13,7 +13,9 @@ var carded = 'carded';
             price: '456.95',
             popularity: '002',
             animal: true,
-            item: false
+            item: false,
+            large: true,
+            small: false
         },
         {
             image: '../images/balloon_lamp.jpg',
@@ -22,7 +24,9 @@ var carded = 'carded';
             price: '28.95',
             popularity: '003',
             animal: false,
-            item: true
+            item: true,
+            large: false,
+            small: true
         },
         {
             image: '../images/deluxe_jellyfish_lamp.jpg',
@@ -31,7 +35,9 @@ var carded = 'carded';
             price: '795.95',
             popularity: '001',
             animal: true,
-            item: false
+            item: false,
+            large: false,
+            small: true
         },
         {
             image: '../images/pencil_lamp.jpg',
@@ -40,7 +46,9 @@ var carded = 'carded';
             price: '52.95',
             popularity: '003',
             animal: false,
-            item: true
+            item: true,
+            large: true,
+            small: false
         },
         {
             image: '../images/arrow_lamp.jpg',
@@ -49,7 +57,9 @@ var carded = 'carded';
             price: '16.95',
             popularity: '005',
             animal: false,
-            item: true
+            item: true,
+            large: false,
+            small: true
         },
         {
             image: '../images/birds_lamp.jpg',
@@ -58,7 +68,9 @@ var carded = 'carded';
             price: '65.95',
             popularity: '002',
             animal: true,
-            item: false
+            item: false,
+            large: true,
+            small: false
         }
     ];
 
@@ -108,28 +120,23 @@ var carded = 'carded';
         orderBy(event.target.value);
     });
 
-    function priceRange(showItems) {
-            var filterResults;
-            if (showItems < 100) {
+    function isRotund (showItems) {
+        var filterResults;
+            if (showItems === true) {
                 filterResults = mockDatabase.filter(function (result) {
-                    return showItems;
+                    return result.large;
                 });
             }
-            if (showItems >= 100 && showItems <= 500) {
+            else {
                 filterResults = mockDatabase.filter(function (result) {
-                    return showItems;
-                });
-            }
-            if (showItems >= 500) {
-                filterResults = mockDatabase.filter(function (result) {
-                    return showItems;
+                    return result.small;
                 });
             }
             renderList(filterResults);
     }
     document.querySelector('#pRange').addEventListener('change', function (event) {
-        var value = event.target.value === 'r1';
-        priceRange(value);
+        var value = event.target.value === 'large'
+            isRotund(value);
     });
 
     // can we make animals and items different drop downs like in the published example
